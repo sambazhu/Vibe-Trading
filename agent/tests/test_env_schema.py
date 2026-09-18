@@ -153,6 +153,7 @@ class TestEnvConfigDefaults:
         assert c.swarm.swarm_worker_timeout == 300
         assert c.swarm.swarm_worker_max_iter == 50
         assert c.swarm.swarm_max_workers == 4
+        assert c.agent_tuning.vibe_trading_agent_max_iterations == 50
         assert c.swarm.swarm_timeout == 1800
         assert c.swarm.swarm_heartbeat_interval_s == 3.0
         assert c.swarm.swarm_stream_retry_delay_s == 1.0

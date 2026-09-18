@@ -402,6 +402,11 @@ class AgentTuningConfig(_EnvBase):
     """
 
     token_threshold: int = Field(alias="TOKEN_THRESHOLD", default=40000)
+    # ReAct loop iteration cap for interactive/web sessions. Heavy pipelines
+    # (multi-layer scoring, batch research) legitimately exceed 50 turns.
+    vibe_trading_agent_max_iterations: int = Field(
+        alias="VIBE_TRADING_AGENT_MAX_ITERATIONS", default=50, ge=1,
+    )
     vt_heartbeat_interval_s: float = Field(alias="VT_HEARTBEAT_INTERVAL_S", default=3.0)
     vt_reasoning_delta_min_interval_s: float = Field(
         alias="VT_REASONING_DELTA_MIN_INTERVAL_S", default=1.0,
